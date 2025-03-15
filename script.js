@@ -5,6 +5,8 @@ window.addEventListener("load", (e)=>{
     if(localStorage.getItem("data")){
         input.value = localStorage.getItem("data");
     }
+    // set theme color from local storage
+    input.className  = localStorage.getItem("theme");
 });
 
 input.addEventListener("focusout", (e)=>{
@@ -12,9 +14,9 @@ input.addEventListener("focusout", (e)=>{
 });
 
 select.addEventListener("change", (e)=>{
-    console.log(select.value);
     input.className = select.value;
-    console.log(input);
+    // save theme value to local storage
+    localStorage.setItem("theme", select.value)
 })
 
 
